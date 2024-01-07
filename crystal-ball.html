@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystal Ball</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@500&display=swap');
+       
+        body {
+            font-family: 'Cormorant Upright', sans-serif;
+            background: url("bg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .crystal-text {
+            text-align: center;
+            padding: 0 200px 30px;
+            color: rgb(120, 39, 122);
+        }
+
+        .mystical-ball {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #800080 20%, transparent 40%);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 150px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            position: relative;
+            margin-bottom: 20px; 
+        }
+
+        .glow {
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px 0 #800080;
+            }
+
+            100% {
+                box-shadow: 0 0 20px 5px #800080;
+            }
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {            
+            font-family: 'Cormorant Upright', sans-serif;
+            width: 150px;
+            height: 40px;
+            font-size: 18px;
+            background-color: #E5F8F6;
+            color: #aa358f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 70px 200px 0;
+            transition: box-shadow 0.3s ease-in-out;
+            box-shadow: 0 0 10px 0 #00BFFF;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: #aa358f;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 20px 0 #00BFFF;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="crystal-text">
+        <h2>Curious about a burning question? Click on the Crystal Ball to unlock its mystical powers. Ponder your inquiry, and watch as the ball reveals its answer. Will it be a resounding 'Yes,' a firm 'No,' or a cryptic 'The future is hidden'? Your destiny awaits!</h2>
+    </div>
+    <div class="mystical-ball glow" onclick="generateResponse()">
+        <span>Tap Me!</span>
+    </div>
+    <div class="buttons-container">
+        <div class="main">
+            <button class="btn"><a href="index.html">Main Menu</a></button>
+        </div>
+        <div class="fortune">
+            <button class="btn"><a href="fortune.html">Random Fortune</a></button>
+        </div>
+    </div>
+    <script>
+        function generateResponse() {
+            var responses = ["Yes", "No", "The future is uncertain"];
+            var randomIndex = Math.floor(Math.random() * responses.length);
+            var response = responses[randomIndex];
+
+            alert("The mystical ball says: " + response);
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
